@@ -2,7 +2,7 @@ if game.CoreGui:FindFirstChild("LibraryHub05481") then
   game.CoreGui.LibraryHub05481:Destroy()
  end
 
-local function createhub(name)
+local function createhub(namee)
 
 local hub = Instance.new("ScreenGui")
 local MainGUI = Instance.new("Frame")
@@ -76,7 +76,7 @@ GameTitle.BorderSizePixel = 0
 GameTitle.Position = UDim2.new(0.270576298, 0, 0, 0)
 GameTitle.Size = UDim2.new(0, 240, 0, 27)
 GameTitle.Font = Enum.Font.SourceSansSemibold
-GameTitle.Text = name
+GameTitle.Text = namee
 GameTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
 GameTitle.TextSize = 16.000
 GameTitle.TextXAlignment = Enum.TextXAlignment.Left
