@@ -2,7 +2,7 @@ if game.CoreGui:FindFirstChild("LibraryHub05481") then
   game.CoreGui.LibraryHub05481:Destroy()
  end
 
-local function createHub(name)
+local function createhub(name)
 
 local hub = Instance.new("ScreenGui")
 local MainGUI = Instance.new("Frame")
