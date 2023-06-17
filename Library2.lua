@@ -1,9 +1,7 @@
 if game.CoreGui:FindFirstChild("LibraryHub05481") then
   game.CoreGui.LibraryHub05481:Destroy()
 end
-
-
-
+--n
 function createhub(namee)
 local hub = Instance.new("ScreenGui")
 local MainGUI = Instance.new("Frame")
@@ -139,7 +137,7 @@ end
 coroutine.wrap(VXEFO_fake_script)()
 local function HPEE_fake_script() -- hub.LocalScript 
 	local script = Instance.new('LocalScript', hub)
-	local frame = script.Parent.Parent.LIGHTUX --in the .frame - you should need to change it what is your frame name.
+	local frame = script.Parent.MainGUI --in the .frame - you should need to change it what is your frame name.
 	local hotkey = Enum.KeyCode.L
 	local UIS = game:GetService("UserInputService")
 	local open = true
@@ -158,6 +156,5 @@ local function HPEE_fake_script() -- hub.LocalScript
 	end)
 end
 coroutine.wrap(HPEE_fake_script)()
-
-
 end
+
