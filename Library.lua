@@ -2,8 +2,9 @@ if game.CoreGui:FindFirstChild("LibraryHub05481") then
   game.CoreGui.LibraryHub05481:Destroy()
  end
 
-function createHub(name)
-  local hub = Instance.new("ScreenGui")
+local function createhub(name)
+
+local hub = Instance.new("ScreenGui")
 local MainGUI = Instance.new("Frame")
 local BACKGROUND = Instance.new("Frame")
 local DropShadowHolder = Instance.new("Frame")
@@ -157,5 +158,6 @@ local function HPEE_fake_script() -- hub.LocalScript
 end
 coroutine.wrap(HPEE_fake_script)()
 
-  
-  end
+
+end
+
