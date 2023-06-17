@@ -1,9 +1,8 @@
 if game.CoreGui:FindFirstChild("LibraryHub05481") then
   game.CoreGui.LibraryHub05481:Destroy()
- end
-
-local function createhub(namee)
-
+end
+--n
+function createHub(namee)
 local hub = Instance.new("ScreenGui")
 local MainGUI = Instance.new("Frame")
 local BACKGROUND = Instance.new("Frame")
@@ -69,7 +68,7 @@ Frame.BorderSizePixel = 0
 Frame.Position = UDim2.new(0.268175781, 0, 0.0601960719, 0)
 Frame.Size = UDim2.new(0, 490, 0, 2)
 GameTitle.Name = "GameTitle"
-GameTitle.Parent = BACKGROUND
+GameTitle.Parent = MainGUI
 GameTitle.BackgroundColor3 = Color3.fromRGB(8, 8, 8)
 GameTitle.BackgroundTransparency = 1.000
 GameTitle.BorderSizePixel = 0
@@ -87,6 +86,17 @@ OpenHub.BackgroundTransparency = 1.000
 OpenHub.Position = UDim2.new(0.95168376, 0, 0.00245098048, 0)
 OpenHub.Size = UDim2.new(0, 23, 0, 23)
 OpenHub.Image = "http://www.roblox.com/asset/?id=12498487469"
+local PagesButton = Instance.new("Frame")
+local UIListLayout = Instance.new("UIListLayout")
+PagesButton.Name = "PagesButton"
+PagesButton.Parent = SideTab
+PagesButton.BackgroundColor3 = Color3.fromRGB(8, 8, 8)
+PagesButton.BackgroundTransparency = 1.000
+PagesButton.BorderSizePixel = 0
+PagesButton.Position = UDim2.new(-0.000275351777, 0, 0.215368748, 0)
+PagesButton.Size = UDim2.new(0, 176, 0, 319)
+UIListLayout.Parent = PagesButton
+UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
 local function VXEFO_fake_script()
 	local script = Instance.new('LocalScript', MainGUI)
 	local UserInputService = game:GetService("UserInputService")
@@ -138,7 +148,7 @@ end
 coroutine.wrap(VXEFO_fake_script)()
 local function HPEE_fake_script() -- hub.LocalScript 
 	local script = Instance.new('LocalScript', hub)
-	local frame = script.Parent.Parent.LIGHTUX --in the .frame - you should need to change it what is your frame name.
+	local frame = script.Parent.MainGUI --in the .frame - you should need to change it what is your frame name.
 	local hotkey = Enum.KeyCode.L
 	local UIS = game:GetService("UserInputService")
 	local open = true
@@ -158,6 +168,77 @@ local function HPEE_fake_script() -- hub.LocalScript
 end
 coroutine.wrap(HPEE_fake_script)()
 
-
+return hub
 end
 
+function createPage(hub1, name, imageurl)
+local MiscButton = Instance.new("ImageButton")
+local TextLabel = Instance.new("TextLabel")
+local ImageLabel = Instance.new("ImageLabel")
+MiscButton.Name = "MiscButton"
+MiscButton.Parent = hub1.MainGUI.BACKGROUND.SideTab.PagesButton
+MiscButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+MiscButton.BackgroundTransparency = 1.000
+MiscButton.BorderSizePixel = 0
+MiscButton.Position = UDim2.new(0.00106880907, 0, 0.287469268, 0)
+MiscButton.Size = UDim2.new(0, 175, 0, 36)
+MiscButton.Image = "http://www.roblox.com/asset/?id=12705320405"
+MiscButton.ImageTransparency = 1.000
+
+TextLabel.Parent = MiscButton
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.BackgroundTransparency = 1.000
+TextLabel.Position = UDim2.new(0.22857143, 0, 0, 0)
+TextLabel.Size = UDim2.new(0, 135, 0, 36)
+TextLabel.Font = Enum.Font.SourceSansSemibold
+TextLabel.Text = name
+TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.TextSize = 17.000
+TextLabel.TextXAlignment = Enum.TextXAlignment.Left
+
+ImageLabel.Parent = MiscButton
+ImageLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ImageLabel.BackgroundTransparency = 1.000
+ImageLabel.BorderSizePixel = 0
+ImageLabel.Position = UDim2.new(0.0400000028, 0, 0.138888896, 0)
+ImageLabel.Size = UDim2.new(0, 25, 0, 25)
+ImageLabel.Image = "http://www.roblox.com/asset/?id=13740501046"
+
+-- Scripts:
+
+local function KYXHCIX_fake_script() -- MiscButton.LocalScript 
+	local script = Instance.new('LocalScript', MiscButton)
+
+	script.Parent.MouseButton1Down:connect(function()
+		---Pages
+		script.Parent.Parent.Parent.Parent.MainPage.Visible = false
+		script.Parent.Parent.Parent.Parent.PlayerPage.Visible = false
+		script.Parent.Parent.Parent.Parent.SettingsPage.Visible = false
+		script.Parent.Parent.Parent.Parent.MiscPage.Visible = true
+	
+		---Buttons
+		script.Parent.Parent.MainButton.ImageTransparency = 1
+		script.Parent.Parent.PlayerButton.ImageTransparency = 1
+		script.Parent.Parent.SettingsButton.ImageTransparency = 1
+		script.Parent.ImageTransparency = 0.61
+	end)
+	
+end
+coroutine.wrap(KYXHCIX_fake_script)()
+local countt = 0
+for i,v in pairs(hub1.MainGUI.BACKGROUND.SideTab.PagesButton:GetChildren()) do
+    countt = countt + 1
+end
+
+if countt == 2 then
+    for i,v in pairs(hub1.MainGUI.BACKGROUND.SideTab.PagesButton:GetChildren()) do
+    if v:IsA("ImageButton") then
+        v.ImageTransparency = 0.61
+        break
+    end
+    
+end
+end
+
+
+end
