@@ -1,9 +1,11 @@
 if hookfunction then
+coroutine.wrap(function()
 pcall(function()
 if game.Players.LocalPlayer.PlayerGui:FindFirstChild("TouchGui") then
 local a=Instance.new("ScreenGui",game.CoreGui)a.Name="ElysiumLogo"a.ZIndexBehavior=Enum.ZIndexBehavior.Sibling;local b=Instance.new("ImageButton")b.Name="ElysiumButton"b.Size=UDim2.new(0,116,0,105)b.Visible=true;b.BorderColor3=Color3.fromRGB(0,0,0)b.BackgroundTransparency=1;b.Position=UDim2.new(0.1252033,0,0.6278195,0)b.BorderSizePixel=0;b.BackgroundColor3=Color3.fromRGB(255,255,255)b.Image="http://www.roblox.com/asset/?id=127256367572086"b.Parent=a;local c=game.CoreGui;local d=c:WaitForChild("toui;lib")local function e()d.Enabled=not d.Enabled end;local f=game:GetService("UserInputService")f.InputBegan:Connect(function(g)if g.UserInputType==Enum.UserInputType.Touch then b.Position=UDim2.new(0.5,-58,0.5,-52.5)end end)b.MouseButton1Click:Connect(e)local h=false;local i,j,k;local function l(g)local m=g.Position-j;b.Position=UDim2.new(k.X.Scale,k.X.Offset+m.X,k.Y.Scale,k.Y.Offset+m.Y)end;b.InputBegan:Connect(function(g)if g.UserInputType==Enum.UserInputType.MouseButton1 or g.UserInputType==Enum.UserInputType.Touch then h=true;j=g.Position;k=b.Position;g.Changed:Connect(function()if g.UserInputState==Enum.UserInputState.End then h=false end end)end end)b.InputChanged:Connect(function(g)if g.UserInputType==Enum.UserInputType.MouseMovement or g.UserInputType==Enum.UserInputType.Touch then i=g end end)game:GetService("UserInputService").InputChanged:Connect(function(g)if g==i and h then l(g)end end)
 end
 end)
+end)()
 end
 
 -- This file was protected using Luraph Obfuscator v14.3 [https://lura.ph/]
